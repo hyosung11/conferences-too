@@ -1,16 +1,23 @@
 doctype html
 
 html(lang="en-US")
-
   head
     title Medical Conferences Directory
     meta(charset="UTF-8")
     link(rel="stylesheet" href="/stylesheets/application.css")
-
   body
     header
-      h1 Conferences Directory
-      block headerLinks
+      h1
+        a(href="/conferences") Welcome to the International Medical Conferences Directory
 
     main
-      block main
+      div.flash
+        - let kinds = Object.keys(flash || {});
+          if kinds.length > 0
+            ul
+              each kind in kinds
+                each message in flash[kind]
+                  li.flash(class= kind)= message
+
+    block main
+
