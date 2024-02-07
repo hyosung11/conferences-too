@@ -1,20 +1,24 @@
-const express = require("express");
+const express = require('express');
 const morgan = require("morgan");
+const path = require('path'); // For joining file paths
 
 const app = express();
-const host = "localhost";
-const port = 3000;
 
-app.set("views", "./views");
-app.set("view engine", "pug");
+// Set view engine to Pug
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
 
-app.use(morgan("common"));
+// Serve static files from public directory
+app.use(express.static('public'));
+app.use(morgan("common"))
 
+// Route handler for the root path
 app.get("/", (req, res) => {
-  res.render("conferences");
+  // Render the 'layout' template with relevant data (optional)
+  res.render("layout", { /* Pass any data to the template */ });
 });
 
-// Listener
-app.listen(port, host, () => {
-  console.log(`Server listening on port ${port} of ${host}`);
-})
+// ... other routes and middleware
+
+// Start the server
+app.listen(3000, () => console.log('Server listening on port 3000'));
