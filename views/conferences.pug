@@ -1,8 +1,16 @@
-doctype html
+extends layout
 
-html(lang="en-US")
-  head
-    title Conferences
-  body
-    header
-      h1 Conferences Directory
+block main
+  h2 Conferences Directory
+
+//- extends layout
+
+//- block main
+//-   if todoLists === undefined || todoLists.length === 0
+//-     p#no_list You don't have any todo lists. Why not create one?
+//-   else
+//-     p You have some lists. We need to list them.
+
+//- block headerLinks
+//-   .actions
+//-     a.add(href="/lists/new") New List
