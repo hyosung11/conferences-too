@@ -1,0 +1,154 @@
+:root {
+  --color1: #005bb2;
+  --color2: #005cff;
+  --color3: #0083ff;
+  --color4: #66b4ff;
+  --color5: #cce6ff;
+  --complementary: #ff4700;
+  --pink: #ff00b8;
+  --green: #b8ff00;
+  --light-yellow: #FFFFE0;
+  --light-grey: #F2F2F2;
+  --light-red: #FFDDDD;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: Harding, Palatino, Times, serif;
+  min-height: 95vh;
+}
+
+header {
+  border-bottom: var(--color1) solid 1px;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 > a {
+  color: var(--color1);
+}
+
+footer {
+  border: var(--color1) solid 1px;
+  color: var(--color1);
+}
+
+.defaultForm {
+  background-color: var(--light-yellow);
+  border: var(--color1) solid 1px;
+  display: inline-flex;
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 30px;
+}
+
+.col25 {
+  align-items: center;
+  display: flex;
+  float: left;
+  height: 25px;
+  margin-top: 20px;
+  width: 80px;
+}
+
+.col75 {
+  font-family: Harding, Palatino, serif;
+  display: flex;
+  float: right;
+  height: 21px;
+  margin-top: 20px;
+  width: 300px;
+}
+
+input {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+fieldset {
+  border: none;
+}
+
+select {
+  background-color: var(--light-yellow);
+  border: var(--color1) solid 1px;
+  color: var(--color1);
+  font-family: Harding, Palatino, serif;
+  margin-top: 50px;
+  padding: 5px;
+}
+
+.button {
+  background-color: var(--color4);
+  border: none;
+  color: white;
+  font-family: Harding, Palatino, serif;
+  margin: 1px;
+  padding: 5px 10px;
+  width: 60px;
+}
+
+.conferences {
+  margin: 40px 0;
+}
+
+.signInOut {
+  background-color: var(--color1);
+  border: none;
+  color: white;
+  font-family: Harding, Palatino, serif;
+  margin-top: 20px;
+  padding: 5px 10px;
+  width: 75px;
+}
+
+.newConference {
+  background-color: var(--color1);
+  border: none;
+  color: white;
+  font-family: Harding, Palatino, serif;
+  padding: 5px 10px;
+  width: 100px;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  width: 400px;
+  width: 600px;
+}
+
+li {
+  border: none;
+  box-sizing: border-box;  /* This ensures that padding and borders are included in the width */
+  list-style-type: none;
+  padding: 5px;
+  white-space: nowrap;  /* This will prevent content from wrapping to the next line */
+  text-overflow: ellipsis;
+  width: 1200px;  /* Adjust this value based on desired width */
+}
+
+.content {
+  flex: 1; /* Allow content to grow */
+}
+
+.info {
+  background-color: var(--light-red);
+  color: red;
+  height: 30px;
+  list-style-type: none;
+  width: 100%;
+}
+
+.success {
+  color: green;
+}
+
+.inline {
+  display: inline;
+  margin: 0 5px;
+}
