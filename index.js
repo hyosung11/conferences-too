@@ -1,11 +1,9 @@
 const express = require('express');
 const morgan = require("morgan");
-// const path = require('path'); // For joining file paths
 
 const app = express();
 
 // Set view engine to Pug
-// app.set('views', path.join(__dirname, 'views'));
 app.set("views", "./views");
 app.set('view engine', 'pug');
 
@@ -27,4 +25,4 @@ app.get("/", (req, res) => {
 // ... other routes and middleware
 
 // Start the server
-app.listen(3000, () => console.log('Server listening on port 3000'));
+app.listen(3000, 'localhost', () => console.log('Server listening on port 3000'));
