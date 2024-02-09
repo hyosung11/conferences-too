@@ -1,16 +1,42 @@
 extends layout
 
 block main
-  h2 Conferences Directory
+  div.content
+    label(for="specialty") Choose a specialty: 
+    select(name="specialty" id="specialtyButton")
+      each specialty in uniqueSpecialties
+        if specialty === filterValue 
+          option(value=specialty selected)= specialty
+        else
+          option(value=specialty)= specialty
 
-//- extends layout
+    ul
+      div.conferences
+        each conference in conferences
+          li
+            if signedIn
+              form.inline(action=`/conferences/${conference.id}/destroy` method="post")
+                button.button Delete
 
-//- block main
-//-   if todoLists === undefined || todoLists.length === 0
-//-     p#no_list You don't have any todo lists. Why not create one?
-//-   else
-//-     p You have some lists. We need to list them.
+              form.inline(action=`/conferences/${conference.id}/edit` method="post")
+                button.button Edit
+            span= conference.name + ' | ' + conference.start_date + ' | ' + conference.specialty
 
-//- block headerLinks
-//-   .actions
-//-     a.add(href="/lists/new") New List
+    //- if signedIn
+      form(action="/new-conference" method="get")
+        button.newConference(type="submit") Add a new conference
+
+  footer
+    //- if signedIn
+      form(action="/users/signout" method="post")
+        fieldset.actions
+          p Signed in as #{username}.
+          button.signInOut Sign Out
+    //- else
+      form(action="/users/signin" method="get")
+        fieldset.actions
+          p You are not signed in.
+          button.signInOut Sign In
+
+
+  script(src='javascripts/get-option-button.js')
